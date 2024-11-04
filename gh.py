@@ -3,6 +3,8 @@ import feedparser
 from datetime import datetime
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
+from collections import defaultdict
+
 
 
 def get_changelog():
@@ -56,16 +58,16 @@ def get_latest_incident():
 
 def get_incident_history():
     a = feedparser.parse('https://www.githubstatus.com/history.rss')
-    incidentHistory = {}
+    incidentHistory = []
     for i in range(1, 8):
         title = a['entries'][i]['title']
         published = a['entries'][i]['published']
         link = a['entries'][i]['link']
 
 
-        incidentHistory.(title)
-        incidentHistory.(published)
-        incidentHistory.(link)
+        incidentHistory.append(title)
+        incidentHistory.append(published)
+        incidentHistory.append(link)
 
     if i == 7:
 
