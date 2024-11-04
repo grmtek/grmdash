@@ -1,0 +1,41 @@
+{% extends "base0.html" %}
+{% block title %} GRM DASHBOARD {% endblock %}
+
+
+{% block content %}
+
+
+    <div class="container">
+
+
+       {% if status == 'All Systems Operational' %}
+
+        <h3> 🟢 {{ status }} </h3>
+
+        {% else %}
+
+        <h2>{{ status }}</h2>
+        <div class="horizontal-divider"></div> <!-- horidividal-->
+        {% endif %}
+ <p> {{ incident }} </p>
+
+        <p> {{ changelogs }} </p>
+
+    </div>
+
+    <div class="container">
+        <h2> {{ time }} </h2>
+        <img src="{{ url_for('static', filename='images/test_400x400.png') }}" alt="its a dinosaur" class="trex">
+        <div class="horizontal-divider"></div> <!-- horidividal-->
+
+        <ul> {{ incidentHistory }} </ul>
+
+
+    </div>
+    <div class="container">
+
+        <p> {{ availabilityReports }}  </p>
+
+
+{% endblock %}
+    </div>
