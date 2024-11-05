@@ -17,9 +17,20 @@
         <h2>{{ status }}</h2>
         <div class="horizontal-divider"></div> <!-- horidividal-->
         {% endif %}
- <p> {{ incident }} </p>
+        <p> LAST INCIDENT</p>
+        <h4> {{ incident.title[0] }} </h4>
+        <p>{{ incident.published[0] }}</p>
+        <p><a href="{{ incident.link[n] }}" target="_blank">Incident Link</a></p>
 
-        <p> {{ changelogs }} </p>
+
+        <div class="horizontal-divider"></div> <!-- horidividal-->
+<p> INCIDENT HISTORY </p>
+    {% for n in range(incidentHistory.title|length) %}
+
+        <h4>{{ incidentHistory.title[n] }}</h4>
+        <p>{{ incidentHistory.published[n] }}</p>
+        <p><a href="{{ incidentHistory.link[n] }}" target="_blank">Incident Link</a></p>
+    {% endfor %}
 
     </div>
 
@@ -28,13 +39,21 @@
         <img src="{{ url_for('static', filename='images/test_400x400.png') }}" alt="its a dinosaur" class="trex">
         <div class="horizontal-divider"></div> <!-- horidividal-->
 
-        <ul> {{ incidentHistory }} </ul>
-
-
+<p>CHANGELOGS</p>
+        {% for n in range(changelogs.title|length) %}
+        <h4>{{ changelogs.title[n] }}</h4>
+        <p>{{ changelogs.published[n] }}</p>
+        <p><a href="{{ incidentHistory.link[n] }}" target="_blank">Change Link</a></p>
+        {% endfor %}
     </div>
     <div class="container">
+<p> BLOG FEED </p>
+        {% for n in range(blogfeed.title|length) %}
+        <h4>{{ blogfeed.title[n] }}</h4>
+        <p>{{ blogfeed.published[n] }}</p>
+        <p><a href="{{ blogfeed.link[n] }}" target="_blank">Blog Link</a></p>
 
-        <p> {{ availabilityReports }}  </p>
+        {% endfor %}
 
 
 {% endblock %}
