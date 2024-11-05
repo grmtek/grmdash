@@ -10,7 +10,7 @@ Run it locally with:
 
 `python3 -m flask run` 
 
-If you want to have the app autoupdate based on changes, run it in debug mode
+If you want to have the app autoupdate based on code changes or page refreshes, run it in debug mode
 
 `python3 -m flask run --debug` 
 
