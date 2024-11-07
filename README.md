@@ -25,5 +25,3 @@ TODO:
 - implement testing and robust error-handling
 - add logic to determine if incident is occurring now 
 - update image based on incident status
-
-image credit: reddit user `MagikEye`
