@@ -14,11 +14,12 @@ If you want to have the app autoupdate based on code changes or page refreshes, 
 
 `python3 -m flask run --debug` 
 
-<img width="1316" alt="dash" src="https://github.com/user-attachments/assets/bc303eef-6669-49a8-bafe-1d1eabcd67af">
+
+![dash](https://github.com/user-attachments/assets/cccdfc07-0089-421f-84af-e452d4b89de9)
 
 
 TODO: 
-- setup a Pages site 
+- setup a hosted site 
 - update latest status utilizing a webhook for tracking incoming status changes
 - consider update frequency and methodology 
 - look into adding public roadmap entries
