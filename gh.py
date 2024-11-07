@@ -40,6 +40,7 @@ def get_latest_incident():
     incident["title"].append(title[:])
     incident["published"].append(published[:])
     incident["link"].append(link[:])
+
     return incident
 
 def get_incident_history():

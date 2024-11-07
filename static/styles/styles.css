@@ -20,7 +20,7 @@ body {
 
 .container {
     #background: rgba(255, 255, 255, 0.9);
-    background: linear-gradient(to left, #add8e6, #d8bfd8);
+    background: linear-gradient(to left, #bdf2f0, #d8bfd8);
     padding: 15px; /* Padding inside containers */
     border-radius: 8px;
     box-shadow: 5 4px 10px rgba(0, 0, 0, 0.1);
