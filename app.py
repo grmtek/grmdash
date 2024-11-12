@@ -17,7 +17,7 @@ def dashboard():
     incidentHistory = get_incident_history()
     blogfeed = get_blogfeed()
     now = datetime.now()
-    time = now.strftime("%a, %-d %b %Y %-H:%M:%S ")
+    time = now.strftime("%a, %-d %b %Y")
 
     return render_template("dashboard.html",
                            changelogs=changelogs,
