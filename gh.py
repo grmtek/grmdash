@@ -24,11 +24,12 @@ def get_changelog():
 def get_github_status():
     html = urlopen('https://www.githubstatus.com/')
     soup = BeautifulSoup(html, 'html.parser')
+
     raw = soup.find('span', {'class': 'status font-large'})
-    status = ''
     
-    if raw == None:
-        status == "Incident occurring"
+    if raw is None:
+        status = "Incident occurring"
+        print(status)
         return status
     else:
         status = raw.text.lstrip()
