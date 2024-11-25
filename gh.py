@@ -27,7 +27,9 @@ def get_github_status():
     raw = soup.find('span', {'class': 'status font-large'})
 
     status = raw.text.lstrip()
-
+    if status == None:
+        status == "Incident currently occurring"
+        return status
     return status
 
 def get_latest_incident():
