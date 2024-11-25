@@ -29,7 +29,6 @@ def get_github_status():
     
     if raw is None:
         status = "Incident occurring"
-        print(status)
         return status
     else:
         status = raw.text.lstrip()
