@@ -26,11 +26,13 @@ def get_github_status():
     soup = BeautifulSoup(html, 'html.parser')
     raw = soup.find('span', {'class': 'status font-large'})
 
-    status = raw.text.lstrip()
+    
     if status == None:
-        status == "Incident currently occurring"
+        status == "Incident occurring"
         return status
-    return status
+    else:
+        status = raw.text.lstrip()
+        return status
 
 def get_latest_incident():
     a = feedparser.parse('https://www.githubstatus.com/history.rss')
