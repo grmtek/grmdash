@@ -25,9 +25,9 @@ def get_github_status():
     html = urlopen('https://www.githubstatus.com/')
     soup = BeautifulSoup(html, 'html.parser')
     raw = soup.find('span', {'class': 'status font-large'})
-
+    status = ''
     
-    if status == None:
+    if raw == None:
         status == "Incident occurring"
         return status
     else:
