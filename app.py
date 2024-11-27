@@ -17,7 +17,7 @@ def dashboard():
     incidentHistory = get_incident_history()
     blogfeed = get_blogfeed()
     now = datetime.now()
-    time = now.strftime("%a, %-d %b %Y %-H:%M:%S ")
+    time = now.strftime("%a, %-d %b %Y %-H:%M:%S UTC")
 
     return render_template("dashboard.html",
                            changelogs=changelogs,
@@ -29,4 +29,5 @@ def dashboard():
 
 
 if __name__ == "__main__":
-    app.run()
+    from waitress import serve
+    serve(app, host="0.0.0.0", port=8080)

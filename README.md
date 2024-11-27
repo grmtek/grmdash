@@ -23,7 +23,6 @@ If you want to have the app autoupdate based on code changes or page refreshes, 
 TODO: 
 - update latest status utilizing a webhook for tracking incoming status changes
 - consider update frequency and methodology 
-- look into adding public roadmap entries
 - implement testing and robust error-handling
-- add logic to determine if incident is occurring now 
+- add smarter logic to determine if incident is occurring now
 - update image based on incident status
