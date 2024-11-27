@@ -20,7 +20,6 @@ If you want to have the app autoupdate based on code changes or page refreshes, 
 
 `python3 -m flask run --debug` 
 
-
 TODO: 
 - update latest status utilizing a webhook for tracking incoming status changes
 - consider update frequency and methodology 
