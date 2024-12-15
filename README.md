@@ -8,8 +8,6 @@ It mostly utilizes the feedparser module to parse public rss feeds to populate t
 
 https://gh.io/grmdash
 
-![dash](https://github.com/user-attachments/assets/cccdfc07-0089-421f-84af-e452d4b89de9)
-
 ---
 
 Run it locally with: 
@@ -22,7 +20,6 @@ If you want to have the app autoupdate based on code changes or page refreshes, 
 
 TODO: 
 - update latest status utilizing a webhook for tracking incoming status changes
-- consider update frequency and methodology 
 - implement testing and robust error-handling
-- add smarter logic to determine if incident is occurring now
-- update image based on incident status
+- consider smarter logic to determine if incident is occurring now
+
