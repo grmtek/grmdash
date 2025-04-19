@@ -32,15 +32,50 @@ def get_github_status():
 def get_latest_incident():
     a = feedparser.parse('https://www.githubstatus.com/history.rss')
     incident = dict(title=[], published=[], link=[])
-    title = a['entries'][0]['title']
-    published = a['entries'][0]['published']
-    link = a['entries'][0]['link']
+    i = 0
+    for entry in a.entries:
+        if 'maintenanceenddate' in entry:
+            i += 1
+            continue
+        else:
 
-    incident["title"].append(title[:])
-    incident["published"].append(published[:])
-    incident["link"].append(link[:])
+            title = a['entries'][i]['title']
+            published = a['entries'][i]['published']
+            link = a['entries'][i]['link']
 
-    return incident
+            incident["title"].append(title[:])
+            incident["published"].append(published[:])
+            incident["link"].append(link[:])
+
+            return incident
+
+def get_maintenance_events():
+    a = feedparser.parse('https://www.githubstatus.com/history.rss')
+    events = dict(title=[], endtime=[], link=[])
+    date = datetime.now()
+    current = date.timestamp()
+    for entry in a.entries:
+        if 'maintenanceenddate' in entry:
+            title = entry['title']
+            endtime = entry['maintenanceenddate']
+            link = entry['link']
+            checktime = datetime.strptime(endtime, '%a, %d %b %Y %H:%M:%S +0000').timestamp()
+#            print(checktime, current)
+#            if checktime < current:
+            events["title"].append(title[:])
+            events["endtime"].append(endtime[:])
+            events["link"].append(link[:])
+            return events
+
+
+    else:
+        events = 'No maintenance events found'
+        return events
+        pass
+
+
+
+
 
 def get_incident_history():
     a = feedparser.parse('https://www.githubstatus.com/history.rss')
@@ -64,7 +99,6 @@ def get_blogfeed():
         title = b['entries'][i]['title']
         published = b['entries'][i]['published']
         link = b['entries'][i]['link']
-#        if 'Availability' in title:
 
         blogfeed["title"].append(title[:])
         blogfeed["published"].append(published[:])
@@ -84,5 +118,6 @@ def main():
     get_incident_history()
     get_blogfeed()
     get_changelog()
+    get_maintenance_events()
 
 main()

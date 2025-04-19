@@ -18,6 +18,12 @@
         <p>{{ incident.published[0] }}</p>
         <p><a href="{{ incident.link[0] }}" target="_blank">Incident Link</a></p>
 
+        <div class="horizontal-divider"></div> <!-- horidividal-->
+        <p> SCHEDULED MAINTENANCE </p>
+        <h4> {{ events.title[0] }} </h4>
+        <p>{{ events.endtime[0] }}</p>
+        <p><a href="{{ events.link[0] }}" target="_blank">Event Link</a></p>
+
 
         <div class="horizontal-divider"></div> <!-- horidividal-->
 
@@ -44,6 +50,8 @@
         {% endfor %}
     </div>
     <div class="container">
+    <div class="horizontal-divider"></div> <!-- horidividal-->
+
 <p> BLOG FEED </p>
         {% for n in range(blogfeed.title|length) %}
         <h4>{{ blogfeed.title[n] }}</h4>
