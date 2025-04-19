@@ -8,15 +8,11 @@
     <div class="container">
 
 
-       {% if status == 'All Systems Operational' %}
+        <h3><a href="https://www.githubstatus.com/" target="_blank">🪜</a> {{ status }}</h3>
+        
 
-        <h3> 🟢 {{ status }} </h3>
-
-        {% else %}
-
-        <h2>{{ status }}</h2>
+       
         <div class="horizontal-divider"></div> <!-- horidividal-->
-        {% endif %}
         <p> LAST INCIDENT</p>
         <h4> {{ incident.title[0] }} </h4>
         <p>{{ incident.published[0] }}</p>
@@ -24,6 +20,7 @@
 
 
         <div class="horizontal-divider"></div> <!-- horidividal-->
+
 <p> INCIDENT HISTORY </p>
     {% for n in range(incidentHistory.title|length) %}
 

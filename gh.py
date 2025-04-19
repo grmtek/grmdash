@@ -27,9 +27,7 @@ def get_github_status():
 
     raw = soup.find('h2', {'class': 'status font-large'})
     status = raw.get_text().strip()
-    print(status)
     return status
-    
 
 def get_latest_incident():
     a = feedparser.parse('https://www.githubstatus.com/history.rss')
