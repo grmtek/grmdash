@@ -1,5 +1,5 @@
 from flask import Flask, redirect, url_for, render_template
-from gh import get_changelog, get_incident_history, get_latest_incident, get_blogfeed, get_github_status
+from gh import get_changelog, get_incident_history, get_latest_incident, get_blogfeed, get_github_status, get_maintenance_events
 from datetime import datetime
 
 app = Flask(__name__)
@@ -18,6 +18,7 @@ def dashboard():
     blogfeed = get_blogfeed()
     now = datetime.now()
     time = now.strftime("%a, %-d %b %Y %-H:%M:%S UTC")
+    events = get_maintenance_events()
 
     return render_template("dashboard.html",
                            changelogs=changelogs,
@@ -25,9 +26,11 @@ def dashboard():
                            status=status,
                            incidentHistory=incidentHistory,
                            blogfeed=blogfeed,
-                           time=time)
+                           time=time,
+                           events=events)
 
 
 if __name__ == "__main__":
     from waitress import serve
     serve(app, host="0.0.0.0", port=8080)
+    # TODO: Add an CLI arg option to specify port, debug mode. etc
