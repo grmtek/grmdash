@@ -60,8 +60,10 @@ def get_maintenance_events():
             endtime = entry['maintenanceenddate']
             link = entry['link']
             checktime = datetime.strptime(endtime, '%a, %d %b %Y %H:%M:%S +0000').timestamp()
-#            print(checktime, current)
+
+# TODO: Implement mechanism to determine if maintenance is still scheduled or already complete
 #            if checktime < current:
+
             events["title"].append(title[:])
             events["endtime"].append(endtime[:])
             events["link"].append(link[:])
