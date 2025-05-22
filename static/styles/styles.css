@@ -6,7 +6,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #add8e6, #adc2e6);
+    background: linear-gradient(to right, #959b9a, #959b9a);
     color: #333;
     line-height: 1.6;
     padding: 20px;
@@ -20,7 +20,7 @@ body {
 
 .container {
     #background: rgba(255, 255, 255, 0.9);
-    background: linear-gradient(to left, #add8e6, #adc2e6);
+    background: linear-gradient(to left, #FFFFF0, #fff5e6);
     padding: 15px; /* Padding inside containers */
     border-radius: 8px;
     box-shadow: 5 4px 10px rgba(0, 0, 0, 0.1);
