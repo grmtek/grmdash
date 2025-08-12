@@ -71,7 +71,10 @@ def get_maintenance_events():
 
 
     else:
-        events = 'No maintenance events found'
+        events["title"].append('No maintenance event to report')
+        events["endtime"].append('')
+        events["link"].append('#')
+        
         return events
         pass
 
