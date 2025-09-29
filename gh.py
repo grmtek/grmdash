@@ -30,7 +30,7 @@ def get_github_status():
             print(status)
             return status
         else:
-            return "Status not found"
+            return "Systems Operational"
     except URLError as e:
         print(f"Network error in get_github_status: {e}")
         return "Could not fetch status"
