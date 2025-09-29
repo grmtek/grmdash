@@ -23,9 +23,12 @@ def get_github_status():
     try:
         html = urlopen('https://www.githubstatus.com/', timeout=10)
         soup = BeautifulSoup(html, 'html.parser')
-        raw = soup.find('h2', {'class': 'status font-large'})
+        raw = soup.find('div', {'class': 'incident-title font-large'})
         if raw:
-            return raw.get_text().strip()
+            status = raw.get_text().strip()
+            status = status.replace('Subscribe', '')
+            print(status)
+            return status
         else:
             return "Status not found"
     except URLError as e:
